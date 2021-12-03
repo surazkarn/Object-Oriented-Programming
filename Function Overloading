@@ -1,0 +1,65 @@
+//Overload the function  find_perimeter() with one, two  and three float parameters. 
+//The  function with one parameter is  used to return the perimeter of  the circle. 
+//The function with two  parameters is used to return the  perimeter of the rectangle. 
+//The  function with three parameters  is used to return the perimeter of  the triangle. 
+//Write the necessary  C++ program to test the  functionality of above functions.
+
+#include<iostream>
+using namespace std;
+ 
+float find_perimeter(float r)
+{
+    return 2*3.14*r;
+}
+ 
+float find_perimeter(float l, float b)
+{
+    return 2*(l+b);
+}
+
+float find_perimeter(float a, float b, float c)
+{
+    return (a+b+c);
+}
+ 
+int main()
+{
+    float x, y, z;
+    int ch;
+    cout<<"::: Menu for calculating perimeter :::"<<endl;
+    cout<<"1. circle"<<endl;
+    cout<<"2. Rectangle"<<endl;
+    cout<<"3. Triangle"<<endl;
+    cout<<"Enter your choice(1/2/3) : ";
+    cin>>ch;
+     
+    switch(ch)
+    {
+        case 1: cout<<"\n\nEnter the radius of circle: ";
+                cin>>x;
+                cout<<"\nPerimeter = "<<find_perimeter(x)<<" units";
+                break;
+                
+        case 2: cout<<"\n\nEnter length for the Rectangle: ";
+                cin>>x;
+                cout<<"\nEnter breadth for the Rectangle: ";
+                cin>>y;
+                cout<<"\nPerimeter = "<<find_perimeter(x,y)<<" units";
+                break;
+                 
+        case 3: cout<<"\n\nEnter 1st side length: ";
+                cin>>x;
+                cout<<"\nEnter 2nd side length: ";
+                cin>>y;
+                cout<<"\nEnter 3rd side length: ";
+                cin>>z;
+                cout<<"\nPerimeter = "<<find_perimeter(x,y,z)<<" units";
+                break;
+                 
+        default: cout<<"Wrong Choice!";
+                 exit(0);
+ 
+    }
+     
+    return 0;
+}
